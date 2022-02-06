@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WebAssembly example - Factorial</title>
+    <script src="factorial.js"></script>
+
+    <script>
+        function run_ws() {
+            var num = document.getElementById("num").value;
+
+            result = Module._factorial(num)
+            console.log(`Factorial of ${num} = ${result}`);
+
+            var r = document.getElementById("result");
+            r.innerText = result
+        }
+    </script>
+  </head>
+  
+  <body>
+    <h1>WebAssembly in C - Factorial</h1>
+    <div style="display: inline-block;">
+        <input id="num" type="number" />
+        <button id="run_button" onclick="run_ws()">=</button>
+        <label id="result"></label>
+    </div>
+  </body>
+</html>
